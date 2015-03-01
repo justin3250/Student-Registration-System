@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="users" required="true"/>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <h:panelGrid class="container">
+            <h:dataTable class="bordered" value="#{cc.attrs.users}" var="users">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{users.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="address1"/>
+                    </f:facet>
+                    <h:outputText value="#{users.address.address1}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="address2"/>
+                    </f:facet>
+                    <h:outputText value="#{users.address.address2}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="addressCity"/>
+                    </f:facet>
+                    <h:outputText value="#{users.address.addressCity}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="addressState"/>
+                    </f:facet>
+                    <h:outputText value="#{users.address.addressState}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="addressCountry"/>
+                    </f:facet>
+                    <h:outputText value="#{users.address.addressCountry}"/>
+                </h:column>
+                
+            </h:dataTable>
+        </h:panelGrid>
+    </cc:implementation>
+</html>

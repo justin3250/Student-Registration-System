@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="course" required="true" type="model.Course"/>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="courseId" value="Course ID #{cc.attrs.course.id}" />
+                <h:inputText  class="form-control" id="courseIds" readonly="true"  value="#{cc.attrs.course.id}"/>
+                <h:inputHidden class="form-control" id="courseId"  value="#{cc.attrs.course.id}"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="courseName" value="Course Name" />
+                <h:inputText  class="form-control" id="courseName" size="40" value="#{cc.attrs.course.courseName}" />
+                <h:messages for="courseName" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="courseDescription" value="Course Description" />
+                <h:inputText  class="form-control" id="courseDescription" size="40" value="#{cc.attrs.course.courseDescription}" />
+                <h:messages for="courseDescription" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+    </cc:implementation>
+</html>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./WEB-INF/defaultTemplate.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+    <ui:define name="subtitle">
+        Login Page
+    </ui:define>
+
+    <ui:define name="body">
+
+        <div class="container col-md-6 col-md-offset-3">
+        <h:form>
+
+            <h:panelGroup class="form-group">
+                <h:message for="j_username" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/><br/>
+                 <h2><h:outputLabel for="j_username" value="Username:" /></h2>
+                <h:inputText id="j_username" class="form-control" value="#{loginController.username}"/>
+               
+                
+
+                <br/>
+                <h:message for="j_password" class="alert alert-danger"></h:message>
+                <br/><br/> 
+                <h2><h:outputLabel for="j_password" value="Password:"/></h2>
+                <h:inputSecret id="j_password" class="form-control" value="#{loginController.password}"/>
+                <br/>
+                   
+                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Login" action="#{loginController.doLogin()}"></h:commandButton>
+                <br/>
+            </h:panelGroup>
+            <a href="#{facesContext.externalContext.requestContextPath}/register.xhtml" 
+               class="btn btn-lg btn-success btn-block">Register</a>
+
+        </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>

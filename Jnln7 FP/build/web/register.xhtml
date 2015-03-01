@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./WEB-INF/defaultTemplate.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:define name="subtitle">
+        Registration Page
+    </ui:define>
+
+    <ui:define name="body">
+
+        <div class="container col-md-6 col-md-offset-3">
+        <h:form>
+
+            <h:panelGroup class="form-group">
+                
+                <h:message for="j_firstName" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_firstName" value="First Name" /></h2>
+                 <h:inputText id="j_firstName" class="form-control" value="#{loginController.firstName}"/>
+                
+                <br/>
+                
+                <h:message for="j_lastName" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_lastName" value="last Name" /></h2>
+                 <h:inputText id="j_lastName" class="form-control" value="#{loginController.lastName}"/>
+                
+                 <br/>
+                 <h:message for="j_gender" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_gender" value="gender" /></h2>
+                 <h:inputText id="j_gender" class="form-control" value="#{loginController.gender}"/>
+                
+                <br/>
+                <h:message for="j_contactNumber" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_contactNumber" value="contact Number" /></h2>
+                 <h:inputText id="j_contactNumber" class="form-control" value="#{loginController.contactNumber}"/>
+                
+                <br/>
+                <h:message for="j_dateOfBirth" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_dateOfBirth" value="Date Of Birth" /></h2>
+                 <h:inputText id="j_dateOfBirth" class="form-control" value="#{loginController.dateOfBirth}">
+                     <f:convertDateTime type="date" dateStyle="medium"/>
+                 </h:inputText>
+                
+                <br/>
+                
+                
+                <h:message for="j_username" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_username" value="Username:" /></h2>
+                <h:inputText id="j_username" class="form-control" value="#{loginController.username}"/>
+               
+                
+                <br/>
+                <h:message for="j_password" class="alert alert-danger"></h:message>
+                <br/>
+                <h2><h:outputLabel for="j_password" value="Password:"/></h2>
+                <h:inputSecret id="j_password" class="form-control" value="#{loginController.password}"/>
+                <br/>
+                
+                <h:message for="j_address1" class="alert alert-danger"></h:message>
+                <br/>
+                <h2><h:outputLabel for="j_address1" value="Address1"/></h2>
+                <h:inputText id="j_address1" class="form-control" value="#{loginController.address1}"/>
+                <br/>
+                
+                <h:message for="j_address2" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_address2" value="Address2:" /></h2>
+                 <h:inputText id="j_address2" class="form-control" value="#{loginController.address2}"/>
+                <br/>
+                
+                <h:message for="j_addressCity" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_addressCity" value="Address City:" /></h2>
+                 <h:inputText id="j_addressCity" class="form-control" value="#{loginController.addressCity}"/>
+                 <br/>
+                
+                <h:message for="j_addressState" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_addressState" value="Address State:" /></h2>
+                 <h:inputText id="j_addressState" class="form-control" value="#{loginController.addressState}"/>
+                 <br/>
+                
+                <h:message for="j_addressCountry" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_addressCountry" value="Address Country:" /></h2>
+                 <h:inputText id="j_addressCountry" class="form-control" value="#{loginController.addressCountry}"/>
+                 <br/>
+                
+                <h:message for="j_addressZipcode" class="alert alert-danger alert-dismissable"></h:message>
+                 <br/>
+                 <h2><h:outputLabel for="j_addressZipcode" value="Address Zip code:" /></h2>
+                 <h:inputText id="j_addressZipcode" class="form-control" value="#{loginController.addressZipcode}"/>
+                <br/><br/>
+                
+                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Register" action="#{loginController.doRegister()}"></h:commandButton>
+                <br/>
+            </h:panelGroup>
+           
+        </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>

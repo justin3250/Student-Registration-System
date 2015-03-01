@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="teacher" required="true" type="model.Teacher"/>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <br/><br/><br/>
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="teacherId" value="teacher ID" />
+                <h:inputText  class="form-control" id="teacherIds" readonly="true"  value="#{cc.attrs.teacher.id}"/>
+                <h:inputHidden class="form-control" id="teacherId"  value="#{cc.attrs.teacher.id}"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="name" value="Name" />
+                <h:inputText  class="form-control" id="name" size="40" value="#{cc.attrs.teacher.name}" />
+                <h:messages for="name" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+       <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="address1" value="Address 1" />
+                <h:inputText  class="form-control" id="address1" size="40" value="#{cc.attrs.teacher.address.address1}" />
+                <h:messages for="address1" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="address2" value="Address 2" />
+                <h:inputText  class="form-control" id="address2" size="40" value="#{cc.attrs.teacher.address.address2}" />
+                <h:messages for="address2" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="addressCity" value="Address City" />
+                <h:inputText  class="form-control" id="addressCity" size="40" value="#{cc.attrs.teacher.address.addressCity}" />
+                <h:messages for="addressCity" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="addressState" value="Address State" />
+                <h:inputText  class="form-control" id="addressState" size="40" value="#{cc.attrs.teacher.address.addressState}" />
+                <h:messages for="addressState" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="addressCountry" value="Address Country" />
+                <h:inputText  class="form-control" id="addressCountry" size="40" value="#{cc.attrs.teacher.address.addressCountry}" />
+                <h:messages for="addressCountry" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        <h:panelGroup layout="block" class="form-group">
+            <h:outputLabel>
+                <h:outputLabel for="addressZipCode" value="Address Zip-Code" />
+                <h:inputText  class="form-control" id="addressZipCode" size="40" value="#{cc.attrs.teacher.address.addressZipCode}" />
+                <h:messages for="addressZipCode" style="color:red"/>
+            </h:outputLabel>
+        </h:panelGroup>
+        
+        
+    </cc:implementation>
+</html>

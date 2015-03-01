@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../WEB-INF/secureTemplate.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+
+   
+
+    <ui:define name="subtitle">
+        Welcome #{facesContext.externalContext.remoteUser}
+    </ui:define>
+
+    
+    <ui:define name="body">
+        <h2 class="alert-dismissible alert alert-success text-center">Available Enrollment List</h2>
+        <h:dataTable class="bordered" value="#{courseBean.findAll()}" var="course">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Course Number"/>
+                    </f:facet>
+                    <h:outputText value="#{course.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Course Name"/>
+                    </f:facet>
+                    <h:outputText value="#{course.courseName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Course Description"/>
+                    </f:facet>
+                    <h:outputText value="#{course.courseDescription}"/>
+                </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandLink class="btn btn-block btn-primary" action="#{studentController.enrollStudentCourse(course)}" value="Enroll" /> 
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+    </ui:define>
+
+</ui:composition>
